@@ -6,9 +6,9 @@ export default function App() {
   return (
     <View className="bg-gray-100 h-full text-red-300 flex justify-center items-center">
       <Text className="text-3xl font-pblack">vShare</Text>
-      <Link href="/profile" style={{ color: "blue" }}>
+      <Link href="/home" style={{ color: "blue" }}>
         {" "}
-        Go To the Profile{" "}
+        Home{" "}
       </Link>
       <StatusBar style="auto" />
     </View>
