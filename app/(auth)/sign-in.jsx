@@ -2,11 +2,13 @@ import { Text, View, ScrollView, Dimensions, Alert, Image } from "react-native";
 import React, { useState } from "react";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { images } from "../../constants";
-
+import { signIn } from "../../lib/appwrite";
 import { CustomButton, FormField } from "../../components";
 import { Link } from "expo-router";
+import { useGlobalContext } from "../../coontext/GlobalProvider";
 
 const SignIn = () => {
+  const { setUser, setIsLogged } = useGlobalContext();
   const [isSubmitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
     email: "",

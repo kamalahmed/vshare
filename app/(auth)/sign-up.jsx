@@ -14,8 +14,9 @@ import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view
 import { images } from "../../constants";
 import { createUser } from "../../lib/appwrite";
 import { CustomButton, FormField } from "../../components";
-
+import { useGlobalContext } from "../../coontext/GlobalProvider";
 const SignUp = () => {
+  const { setUser, setIsLogged } = useGlobalContext();
   const [isSubmitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
     username: "",
@@ -74,6 +75,7 @@ const SignUp = () => {
             value={form.username}
             handleChangeText={(e) => setForm({ ...form, username: e })}
             otherStyles="mt-10"
+            placeholder="Username"
           />
 
           <FormField
@@ -82,6 +84,7 @@ const SignUp = () => {
             handleChangeText={(e) => setForm({ ...form, email: e })}
             otherStyles="mt-7"
             keyboardType="email-address"
+            placeholder="Email address"
           />
 
           <FormField
@@ -89,6 +92,7 @@ const SignUp = () => {
             value={form.password}
             handleChangeText={(e) => setForm({ ...form, password: e })}
             otherStyles="mt-7"
+            placeholder="Password"
           />
 
           <CustomButton
